@@ -1,0 +1,16 @@
+base
+devtools
+slidify
+slidifyLibraries
+shiny
+knitr
+XML
+emoa
+ggplot2
+dplyr
+htmlwidgets
+plotly
+Rcpp
+RcppMLPACK
+bindrcpp
+kableExtra

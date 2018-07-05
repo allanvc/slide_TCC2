@@ -127,7 +127,11 @@ ul.nav li{ font-size: 18px; line-height: 24px;}
 
 <slide class="class" id="id" style="background:;">
   <article data-timings="">
-    <ul>
+    <p><br>
+<br>
+<br></p>
+
+<ul>
 <li class='fragment'>algoritmos \(\rightarrow\) restrições:
 
 <ul>
@@ -161,7 +165,9 @@ ul.nav li{ font-size: 18px; line-height: 24px;}
 <br></p>
 
 <ul class = "build incremental">
-<li>Desenvolver um algoritmo para determinar o número de clusters utilizando uma função multiobjetivo;</li>
+<li><p>Desenvolver um algoritmo para determinar o número de clusters utilizando uma função multiobjetivo;</p></li>
+<li><p class='fragment'><code>Porém...</code> &quot;Não acho que quem ganhar ou quem perder, nem quem ganhar nem perder, vai ganhar ou perder. Vai todo mundo perder.&quot; (Dilma Roussef)</p></li>
+<li><p>No Free Lunch Theorems</p></li>
 </ul>
 
   </article>
@@ -174,6 +180,27 @@ ul.nav li{ font-size: 18px; line-height: 24px;}
   </hgroup>
   <article data-timings="">
     
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Descrição geral do método</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><br>
+<br></p>
+
+<ul class = "build incremental">
+<li>aplicar uma técnica de clusterização <code>(MST)</code> nos dados reais para \(k=2,...,n\) \(\space\) clusters;</li>
+<li>obter duas estatísticas de teste (conectividade e SSwt) para cada solução;</li>
+<li>repetir o procedimento para dados simulados (hipercubos);</li>
+<li>comparar as soluções obtidas em ambos os casos para definir o valor de \(k\);
+<br></li>
+<li><code>ideia</code> \(\rightarrow\) espera-se que soluções espúrias de agrupamentos nos dados apresentem valores de estatísticas de teste próximos aos das simulações.</li>
+</ul>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -229,13 +256,15 @@ ul.nav li{ font-size: 18px; line-height: 24px;}
     <ul>
 <li>\(N\): número de pontos no dataset; </li>
 <li>\(L\) (ou \(n\_neig\)): cardinalidade do conjunto de vizinhos mais próximos para avaliar conectividade; </li>
-<li>\(X\): matriz ordenada de distâncias euclidianas de tamanho \(L \times N\); </li>
-<li><p>\(C_k\): cluster de rótulo \(k\).</p></li>
-<li><p>Conectividade:
-\[conn = \sum_{i=1}^{N}\left(\sum_{j=1}^{L}x_{i,nn_{ij}}\right),\]</p>
-
-<p>\[x_{r,s} = \begin{cases} \frac{1}{j}, \; & \text{se} \; \nexists C_k: r \in C_k \land s \in C_k. \\ 0, & \text{caso  contrário}. \end{cases}\]</p></li>
+<li>\(V_i\): conjunto de vizinhos mais próximos do ponto \(i\); </li>
+<li>\(F_i\): conjunto de ligações do ponto \(i\) resultante da MST;</li>
 </ul>
+
+<p><br></p>
+
+<p>\[conn = \sum_{i=1}^{N}\left(\sum_{j=1}^{L}x_{j,i}\right),\]</p>
+
+<p>\[x_{j,i} = \begin{cases} \frac{1}{j}, \; & \text{se} \; j \in F_i \land j \notin V_j;  \\ 0, & \text{caso  contrário}. \end{cases}\]</p>
 
   </article>
   <!-- Presenter Notes -->
@@ -274,7 +303,7 @@ ul.nav li{ font-size: 18px; line-height: 24px;}
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="segue" id="slide-14" style="background:grey;">
+<slide class="segue" id="slide-15" style="background:grey;">
   <hgroup>
     <h1>Uma demonstração ...</h1>
   </hgroup>
@@ -284,7 +313,7 @@ ul.nav li{ font-size: 18px; line-height: 24px;}
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="segue" id="slide-15" style="background:grey;">
+<slide class="segue" id="slide-16" style="background:grey;">
   <hgroup>
     <h1>Alguns resultados ...</h1>
   </hgroup>
@@ -294,7 +323,7 @@ ul.nav li{ font-size: 18px; line-height: 24px;}
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-16" style="background:;">
+<slide class="" id="slide-17" style="background:;">
   <hgroup>
     <h2>Resultados (1)</h2>
   </hgroup>
@@ -737,7 +766,7 @@ ul.nav li{ font-size: 18px; line-height: 24px;}
 
 <slide class="class" id="id" style="background:;">
   <hgroup>
-    <h2>Bibliografia</h2>
+    <h2>Referências</h2>
   </hgroup>
   <article data-timings="">
     <ul>
@@ -752,7 +781,7 @@ ul.nav li{ font-size: 18px; line-height: 24px;}
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="segue" id="slide-23" style="background:grey;">
+<slide class="segue" id="slide-24" style="background:grey;">
   <hgroup>
     <h1>Obrigado!!</h1>
   </hgroup>
@@ -824,104 +853,110 @@ ul.nav li{ font-size: 18px; line-height: 24px;}
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=7 title='Minimum Spanning Trees (MST)'>
+        data-slide=7 title='Descrição geral do método'>
          7
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=8 title='Hipercubos - Distribuição de Referência'>
+        data-slide=8 title='Minimum Spanning Trees (MST)'>
          8
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=9 title='Estatísticas de Teste - SS.wt'>
+        data-slide=9 title='Hipercubos - Distribuição de Referência'>
          9
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=10 title='Estatísticas de Teste - conn'>
+        data-slide=10 title='Estatísticas de Teste - SS.wt'>
          10
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=11 title='Otimalidade de Pareto - Função Multi-objetivo'>
+        data-slide=11 title='Estatísticas de Teste - conn'>
          11
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=12 title='Algoritmo (1)'>
+        data-slide=12 title='Otimalidade de Pareto - Função Multi-objetivo'>
          12
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=13 title='Algoritmo (2)'>
+        data-slide=13 title='Algoritmo (1)'>
          13
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=14 title='Uma demonstração ...'>
+        data-slide=14 title='Algoritmo (2)'>
          14
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=15 title='Alguns resultados ...'>
+        data-slide=15 title='Uma demonstração ...'>
          15
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=16 title='Resultados (1)'>
+        data-slide=16 title='Alguns resultados ...'>
          16
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=17 title='Resultados (2)'>
+        data-slide=17 title='Resultados (1)'>
          17
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=18 title='Resultados (3)'>
+        data-slide=18 title='Resultados (2)'>
          18
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=19 title='Resultados (4)'>
+        data-slide=19 title='Resultados (3)'>
          19
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=20 title='Resultados (5)'>
+        data-slide=20 title='Resultados (4)'>
          20
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=21 title='Conclusões'>
+        data-slide=21 title='Resultados (5)'>
          21
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=22 title='Bibliografia'>
+        data-slide=22 title='Conclusões'>
          22
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=23 title='Obrigado!!'>
+        data-slide=23 title='Referências'>
          23
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=24 title='Obrigado!!'>
+         24
       </a>
     </li>
   </ul>

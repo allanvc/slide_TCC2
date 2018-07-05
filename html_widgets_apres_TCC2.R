@@ -90,7 +90,7 @@ b <- ggplot()+
   geom_point(data = df_total, aes(x, y, colour = factor(c), shape = factor(c)), size=3)+
   geom_segment(aes(x = df_total[from_total,1], y = df_total[from_total,2],
                    xend = df_total[to_total,1], yend = df_total[to_total,2], colour = "grafo"),
-               data = df_total, linetype="dotted", size = 0.5, alpha = 0.7)+
+               data = df_total, linetype="dotted", size = 0.4, alpha = 0.4)+
   # geom_point(aes(x, y, colour = factor(c), shape = factor(c)), size=3)+
   # Spanning Tree qualquer:
   geom_segment(aes(x = df[from_tree,1], y = df[from_tree,2],
@@ -118,8 +118,10 @@ b <- ggplot()+
   # scale_color_manual(values=c("black", "black", "orange", "red", "blue", "green", "purple"))
   # scale_color_manual(values=c("black", "black", "grey", plotly_palette[4], plotly_palette[1], 
   #                             plotly_palette[3], plotly_palette[2]))
-  scale_color_manual(values=c(plotly_palette[5], plotly_palette[10], "grey", plotly_palette[4], plotly_palette[1], 
-                            plotly_palette[3], plotly_palette[2]))
+  # scale_color_manual(values=c(plotly_palette[5], plotly_palette[10], "grey", plotly_palette[4], plotly_palette[1], 
+  #                           plotly_palette[3], plotly_palette[2]))
+  scale_color_manual(values=c(plotly_palette[1], plotly_palette[2], plotly_palette[10], plotly_palette[4], plotly_palette[5], 
+                            plotly_palette[3], plotly_palette[7]))
 
 b
 

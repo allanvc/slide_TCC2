@@ -88,7 +88,7 @@ ul.nav li{ font-size: 18px; line-height: 24px;}
 <br>
 > - Desenvolver um algoritmo para determinar o número de clusters utilizando uma função multiobjetivo;
 
-> - .fragment `Mas...` "Não acho que quem ganhar ou quem perder, nem quem ganhar nem perder, vai ganhar ou perder. Vai todo mundo perder." (Dilma Roussef)
+> - .fragment `Porém...` "Não acho que quem ganhar ou quem perder, nem quem ganhar nem perder, vai ganhar ou perder. Vai todo mundo perder." (Dilma Roussef)
 
 > - No Free Lunch Theorems
 
@@ -101,7 +101,7 @@ ul.nav li{ font-size: 18px; line-height: 24px;}
 
 <br>
 <br>
-> - aplicar uma técnica de clusterização `(MST)` nos dados reais para $k=1,2,...,n$ $\space$ clusters;
+> - aplicar uma técnica de clusterização `(MST)` nos dados reais para $k=2,...,n$ $\space$ clusters;
 > - obter duas estatísticas de teste (conectividade e SSwt) para cada solução;
 > - repetir o procedimento para dados simulados (hipercubos);
 > - comparar as soluções obtidas em ambos os casos para definir o valor de $k$;
@@ -142,13 +142,14 @@ cat('<iframe src="./assets/widgets/ccc_pca_plotly.html" width="100%" height="100
 
 - $N$: número de pontos no dataset; 
 - $L$ (ou $n\_neig$): cardinalidade do conjunto de vizinhos mais próximos para avaliar conectividade; 
-- $X$: matriz ordenada de distâncias euclidianas de tamanho $L \times N$; 
-- $C_k$: cluster de rótulo $k$.
+- $V_i$: conjunto de vizinhos mais próximos do ponto $i$; 
+- $F_i$: conjunto de ligações do ponto $i$ resultante da MST;
 
-- Conectividade:
-  $$conn = \sum_{i=1}^{N}\left(\sum_{j=1}^{L}x_{i,nn_{ij}}\right),$$
+<br>
+
+  $$conn = \sum_{i=1}^{N}\left(\sum_{j=1}^{L}x_{j,i}\right),$$
   
-  $$x_{r,s} = \begin{cases} \frac{1}{j}, \; & \text{se} \; \nexists C_k: r \in C_k \land s \in C_k. \\ 0, & \text{caso  contrário}. \end{cases}$$
+  $$x_{j,i} = \begin{cases} \frac{1}{j}, \; & \text{se} \; j \in F_i \land j \notin V_j;  \\ 0, & \text{caso  contrário}. \end{cases}$$
 
 
 --- .class #id

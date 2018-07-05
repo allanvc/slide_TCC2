@@ -65,6 +65,9 @@ ul.nav li{ font-size: 18px; line-height: 24px;}
 
 --- .class #id
 
+<br>
+<br>
+<br>
 
 - .fragment algoritmos $\rightarrow$ restrições:
   - .fragment "shape" dos dados `vs` algoritmo empregado
@@ -85,10 +88,26 @@ ul.nav li{ font-size: 18px; line-height: 24px;}
 <br>
 > - Desenvolver um algoritmo para determinar o número de clusters utilizando uma função multiobjetivo;
 
+> - .fragment `Mas...` "Não acho que quem ganhar ou quem perder, nem quem ganhar nem perder, vai ganhar ou perder. Vai todo mundo perder." (Dilma Roussef)
+
+> - No Free Lunch Theorems
 
 
 --- .segue bg:grey
 # Metodologia ...
+
+--- .class #id
+## Descrição geral do método
+
+<br>
+<br>
+> - aplicar uma técnica de clusterização `(MST)` nos dados reais para $k=1,2,...,n$ $\space$ clusters;
+> - obter duas estatísticas de teste (conectividade e SSwt) para cada solução;
+> - repetir o procedimento para dados simulados (hipercubos);
+> - comparar as soluções obtidas em ambos os casos para definir o valor de $k$;
+<br>
+> - `ideia` $\rightarrow$ espera-se que soluções espúrias de agrupamentos nos dados apresentem valores de estatísticas de teste próximos aos das simulações.
+
 
 --- .class #id
 ## Minimum Spanning Trees (MST)
@@ -568,7 +587,7 @@ inspiração: `Cubic Clustering Criterion (CCC)`
 
 
 --- .class #id
-## Bibliografia
+## Referências
 
 
 - CURTIN, R. R. et al. `Mlpack: A scalable C++ machine learning library`. Journal of Machine Learning Research , v. 14, 2013.

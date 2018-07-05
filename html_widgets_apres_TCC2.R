@@ -63,12 +63,14 @@ nolink_togg <-c(31, 30, rep(1, nrow(d)-2))
 # a saida eh fazer um data_frame usando o tamanho maximo - liga cada numero a todos os outros
 # ...  se passar a menos nos links nao tem problema
 
+# arvore
 # from_tree <- c( c(17, 29, 28, 23, 24, 26, 25, 27, 19, 22, 30, 4, 8, 3, 5, 31, 14, 2, 11, 12, 10, 7, 9, 13, 15, 6, 1, 20, 18, 21), 1)
 # to_tree <- c( c(29, 28, 23, 24, 26, 25, 27, 19, 22, 30, 4, 8, 3, 5, 31, 14, 2, 11, 12, 10, 7, 9, 13, 15, 6, 1, 20, 18, 21, 16), 1)
 
 from_tree <- c( c(17, 29, 28, 23, 24, 26, 25, 27, 19, 22, 30, 4, 8, 3, 8, 8, 14, 2, 11, 12, 10, 7, 9, 13, 15, 6, 1, 20, 18, 21), 1)
 to_tree <- c( c(29, 28, 23, 24, 26, 25, 27, 19, 22, 30, 4, 8, 3, 5, 31, 14, 2, 11, 12, 10, 7, 9, 13, 15, 6, 1, 20, 18, 21, 16), 1)
 
+# grafo
 from_total <- rep(1:nrow(d), each= nrow(d))
 to_total <- rep(1:nrow(d), nrow(d))
 
@@ -114,8 +116,10 @@ b <- ggplot()+
   guides(color=guide_legend(title=NULL), shape=guide_legend(title=NULL))+
   scale_shape_manual(values=c(1, 16))+
   # scale_color_manual(values=c("black", "black", "orange", "red", "blue", "green", "purple"))
-  scale_color_manual(values=c("black", "black", "grey", plotly_palette[4], plotly_palette[1], 
-                              plotly_palette[3], plotly_palette[2]))
+  # scale_color_manual(values=c("black", "black", "grey", plotly_palette[4], plotly_palette[1], 
+  #                             plotly_palette[3], plotly_palette[2]))
+  scale_color_manual(values=c(plotly_palette[5], plotly_palette[10], "grey", plotly_palette[4], plotly_palette[1], 
+                            plotly_palette[3], plotly_palette[2]))
 
 b
 
@@ -234,8 +238,8 @@ saveWidget(as_widget(bc), file = "/home/allan/Documents/1S2018/TCC2/apres_TCC2/a
 
 # outra versao da fig 12 (menos pontos)
 n = 42
-n = 52
-#set.seed(1984)
+# n = 52
+# set.seed(1984)
 set.seed(123)
 d<-matrix(rnorm(n,mean=-2,sd=.5), n/2, 2) # 3d
 
@@ -267,7 +271,9 @@ d <-
   scale_shape_manual(values=c(4, 15))+
   # scale_fill_manual(plotly_palette[3])+
   # scale_color_manual(values=c("black", "black", "orange", "red", "blue", "green", "purple"))
-  scale_color_manual(values=c("black", plotly_palette[3]))
+  # scale_color_manual(values=c("black", plotly_palette[3]))
+  scale_color_manual(values=c(plotly_palette[5], plotly_palette[3]))+
+  labs(x="conn", y="SSwt")
 
 d
 

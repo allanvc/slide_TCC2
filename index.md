@@ -137,15 +137,16 @@ inspiração: `Cubic Clustering Criterion (CCC)`
 ## Estatísticas de Teste - conn
 
 - $N$: número de pontos no dataset; 
-- $L$ (ou $n\_neig$): cardinalidade do conjunto de vizinhos mais próximos para avaliar conectividade; 
-- $V_i$: conjunto de vizinhos mais próximos do ponto $i$; 
-- $F_i$: conjunto de ligações do ponto $i$ resultante da MST;
+- $L$ (ou $n\_neig$): cardinalidade do conjunto de vizinhos mais próximos para avaliar conectividade;
+- $V_{L_{i}}$: conjunto de vizinhos mais próximos do ponto $i$; 
+- $C_k$: conjunto (cluster) de pontos de rótulo $k$.
+
 
 <br>
 
   $$conn = \sum_{i=1}^{N}\left(\sum_{j=1}^{L}x_{j,i}\right),$$
   
-  $$x_{j,i} = \begin{cases} \frac{1}{j}, \; & \text{se} \; j \in F_i \land j \notin V_j;  \\ 0, & \text{caso  contrário}. \end{cases}$$
+  $$x_{j,i} = \begin{cases} \frac{1}{j}, \; & \text{se} \; \nexists C_k: i \in C_k \land j \in C_k.  \\ 0, & \text{caso  contrário}. \end{cases}$$
 
 
 --- .class #id

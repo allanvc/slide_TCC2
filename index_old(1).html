@@ -255,16 +255,16 @@ ul.nav li{ font-size: 18px; line-height: 24px;}
   <article data-timings="">
     <ul>
 <li>\(N\): número de pontos no dataset; </li>
-<li>\(L\) (ou \(n\_neig\)): cardinalidade do conjunto de vizinhos mais próximos para avaliar conectividade;</li>
-<li>\(V_{L_{i}}\): conjunto de vizinhos mais próximos do ponto \(i\); </li>
-<li>\(C_k\): conjunto (cluster) de pontos de rótulo \(k\).</li>
+<li>\(L\) (ou \(n\_neig\)): cardinalidade do conjunto de vizinhos mais próximos para avaliar conectividade; </li>
+<li>\(V_i\): conjunto de vizinhos mais próximos do ponto \(i\); </li>
+<li>\(F_i\): conjunto de ligações do ponto \(i\) resultante da MST;</li>
 </ul>
 
 <p><br></p>
 
 <p>\[conn = \sum_{i=1}^{N}\left(\sum_{j=1}^{L}x_{j,i}\right),\]</p>
 
-<p>\[x_{j,i} = \begin{cases} \frac{1}{j}, \; & \text{se} \; \nexists C_k: i \in C_k \land j \in C_k.  \\ 0, & \text{caso  contrário}. \end{cases}\]</p>
+<p>\[x_{j,i} = \begin{cases} \frac{1}{j}, \; & \text{se} \; j \in F_i \land j \notin V_j;  \\ 0, & \text{caso  contrário}. \end{cases}\]</p>
 
   </article>
   <!-- Presenter Notes -->
